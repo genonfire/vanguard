@@ -1,6 +1,6 @@
 ! Title: Vanguard
 ! Description: Custom filter for AdGuard
-! Version: 2023.1219.1
+! Version: 2023.1219.2
 ! Homepage: https://github.com/genonfire/vanguard
 ! Expires: 1 days
 
@@ -16,7 +16,6 @@ ruliweb.com##div[id="board_read_mid_best"]
 ruliweb.com##div[id="bbs_reading_m"]
 ruliweb.com##div[id="best_on"]
 
-m.fmkorea.com##div[class="bd"] > div:nth-of-type(2)
 m.fmkorea.com##div.nplt
 m.fmkorea.com##.my_notify
 fmkorea.com##div[class="rd_ft"] > div:nth-of-type(2)
