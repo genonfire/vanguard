@@ -1,11 +1,10 @@
 ! Title: Vanguard
 ! Description: Custom filter for AdGuard
-! Version: 2023.1220.1
+! Version: 2023.1221.1
 ! Homepage: https://github.com/genonfire/vanguard
 ! Expires: 1 days
 
 
-app.clickup.com##cu-upgrade-button
 app.clickup.com##cu-upgrade-toggle
 
 ruliweb.com##div[class^="fixed_ad_wrapper"]
@@ -28,3 +27,6 @@ mlbpark.donga.com##div.burning
 mlbpark.donga.com##div[class^="naver_power"]
 mlbpark.donga.com##div[id^="naver_cont"]
 mlbpark.donga.com##div.bt_menu_wrap
+
+m.ppomppu.co.kr##div.ppomppu > ul[class="bbsList_new"]:nth-of-type(3)
+m.ppomppu.co.kr##div.ppomppu4 > ul[class="bbsList_new"]:nth-of-type(2)
