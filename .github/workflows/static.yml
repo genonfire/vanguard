@@ -30,14 +30,37 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Rename file
+      
+      - name: Verify filter.txt Exists
+        run: |
+          if [ -f filter.txt ]; then
+            echo "filter.txt found."
+          else
+            echo "filter.txt not found!"
+            exit 1
+          fi
+
+      - name: Rename filter.txt to index.html
         run: mv filter.txt index.html
+
+      - name: Verify index.html Exists
+        run: |
+          if [ -f index.html ]; then
+            echo "index.html successfully created."
+          else
+            echo "index.html not found after renaming!"
+            exit 1
+          fi
+
+      - name: List Files
+        run: ls -la
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './index.html'
+          path: './'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
