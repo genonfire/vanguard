@@ -31,36 +31,31 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Verify filter.txt Exists
+      - name: Rename and Move filter.txt to public/index.html
         run: |
-          if [ -f filter.txt ]; then
-            echo "filter.txt found."
-          else
-            echo "filter.txt not found!"
-            exit 1
-          fi
+          mkdir -p public
+          mv filter.txt public/index.html
+          echo "Moved filter.txt to public/index.html"
 
-      - name: Rename filter.txt to index.html
-        run: mv filter.txt index.html
-
-      - name: Verify index.html Exists
+      # Step 4: Verify index.html Exists in public
+      - name: Verify index.html Exists in public
         run: |
-          if [ -f index.html ]; then
-            echo "index.html successfully created."
+          if [ -f public/index.html ]; then
+            echo "public/index.html successfully created."
           else
-            echo "index.html not found after renaming!"
+            echo "public/index.html not found after renaming!"
             exit 1
           fi
 
       - name: List Files
-        run: ls -la
+        run: ls -la public
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './'
+          path: './public'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
