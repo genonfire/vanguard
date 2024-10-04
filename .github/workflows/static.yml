@@ -1,36 +1,41 @@
 name: Deploy
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: write        # Grants write access necessary for deployment
   pages: write
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Verify filter.txt Exists
+      - name: Verify filter.txt Exists
+        run: |
+          if [ -f filter.txt ]; then
+            echo "filter.txt found."
+          else
+            echo "filter.txt not found!"
+            exit 1
+          fi
+
+      # Step 3: Rename and Move filter.txt to public/index.html
       - name: Rename and Move filter.txt to public/index.html
         run: |
           mkdir -p public
@@ -47,15 +52,22 @@ jobs:
             exit 1
           fi
 
-      - name: List Files
+      # Step 5: List Files in public (Optional, for debugging)
+      - name: List Files in public
         run: ls -la public
 
+      # Step 6: Setup Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Upload artifact
+
+      # Step 7: Upload Pages Artifact
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './public'
+          path: './public'   # Uploading the 'public' directory containing index.html
+
+      # Step 8: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
