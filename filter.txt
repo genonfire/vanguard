@@ -1,6 +1,6 @@
 ! Title: Vanguard
 ! Description: Custom filter for AdGuard
-! Version: 2025.0813.1
+! Version: 2025.0819.1
 ! Homepage: https://github.com/genonfire/vanguard
 ! Expires: 1 days
 
@@ -18,8 +18,10 @@ ruliweb.com##div[id="aniBox"]
 ruliweb.com##div[id="push_bar"]
 
 m.fmkorea.com##.my_notify
+m.fmkorea.com##li > a[href="/index.php?mid=football_world&category=33854799"]
+m.fmkorea.com##li > a[href="/index.php?mid=football_world&category=49148035"]
 m.fmkorea.com##li > a[href="/index.php?mid=football_world&category=302870512"]
-m.fmkorea.com##li > a[href="/index.php?mid=football_world&category=8728956699"]
+m.fmkorea.com##li > a[href="/index.php?mid=football_world&category=8728954151"]
 m.fmkorea.com##li.notice
 m.fmkorea.com##div[class="keyword_rank_ticker_wrapper"]
 fmkorea.com##table.common_notice
