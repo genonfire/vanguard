@@ -1,12 +1,13 @@
 ! Title: Vanguard
 ! Description: Custom filter for AdGuard
-! Version: 2026.0323.1
+! Version: 2026.0520.1
 ! Homepage: https://github.com/genonfire/vanguard
 ! Expires: 1 days
 
 
 ruliweb.com##div[class^="fixed_ad_wrapper"]
 ruliweb.com##div[class="quickmenu2_container"]
+ruliweb.com##div[class="ti_reserved_slot"]
 ruliweb.com##div[id="quickmenu2"] > div[class="quickmenu2_row"]:nth-of-type(3)
 ruliweb.com##div[id="quickmenu2"] > div[class="quickmenu2_row"]:nth-of-type(2)
 ruliweb.com##div[id="board_read_mid_best"]
