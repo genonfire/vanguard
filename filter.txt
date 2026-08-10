@@ -1,6 +1,6 @@
 ! Title: Vanguard
 ! Description: Custom filter for AdGuard
-! Version: 2026.0809.1
+! Version: 2026.0810.1
 ! Homepage: https://github.com/genonfire/vanguard
 ! Expires: 1 days
 
@@ -24,7 +24,7 @@ m.fmkorea.com##div[class="fmad_naver_power_link"]
 m.fmkorea.com##div[class="adpost"]
 fmkorea.com##table.common_notice
 fmkorea.com###FM_NOTICE
-*background_nickname.php?member_srl=*$image
+||fmkorea.com*background_nickname.php?member_srl=*$image
 
 mlbpark.donga.com##div.burning
 mlbpark.donga.com##div[class^="naver_power"]
