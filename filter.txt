@@ -1,6 +1,6 @@
 ! Title: Vanguard
 ! Description: Custom filter for AdGuard
-! Version: 2026.0811.1
+! Version: 2026.0811.2
 ! Homepage: https://github.com/genonfire/vanguard
 ! Expires: 1 days
 
@@ -46,5 +46,3 @@ chatgpt.com##div[data-testid="thread-disclaimer"] > div
 
 wordsisters.com##div[id="coupang-books-panel"]
 wordsisters.com##div[id="next-search-suggestions"]
-wordsisters.com##div[id="definitions"]
-wordsisters.com##div[id="example-section"]
